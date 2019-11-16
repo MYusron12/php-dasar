@@ -1,0 +1,25 @@
+data adalah representasi fakta yang ada di dunia nyata
+
+database
+
+
+dbms adalah sebuah software yg mampu mengelola database
+-relationala dbms
+-hierarchical dbms
+-network dbms
+-nosql dbms
+
+primary key
+sebuah data yang dapat merepresentasikan data, dan datanya harus unik tidak boleh ada yang sama
+
+
+schema database
+database : phpdasar
+tabel : mahasiswa
+
+id int primary key auto_increment
+nama varchar(100) 
+nrp varchar(10)
+email varchar(100)
+jurusan varchar(100)
+gambar varchar(100)
