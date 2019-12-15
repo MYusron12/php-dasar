@@ -17,7 +17,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Halaman Admin</title>
+    <title>Halaman Daftar Mahasiswa</title>
 </head>
 
 <body>
