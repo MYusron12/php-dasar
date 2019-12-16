@@ -69,6 +69,7 @@ if (isset($_POST["submit"])) {
                 <button type="submit" class="btn btn-primary mx-auto mt-5" name="submit">Tambah</button>
             </div>
         </form>
+        <a type="submit" class="btn btn-primary" href="index.php">Halaman Utama</a>
     </div>
 
     <!-- Optional JavaScript -->
