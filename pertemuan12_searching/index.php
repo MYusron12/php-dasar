@@ -1,7 +1,6 @@
 <?php
 require 'functions.php';
 $mahasiswa = query("SELECT * FROM mahasiswa");
-
 //tombol cari ditekan
 if (isset($_POST["cari"])) {
     $mahasiswa = cari($_POST["keyword"]);
@@ -9,7 +8,6 @@ if (isset($_POST["cari"])) {
 ?>
 <!doctype html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">

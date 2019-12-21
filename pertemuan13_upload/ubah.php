@@ -50,8 +50,9 @@ if (isset($_POST["submit"])) {
 <body>
     <div class="container">
         <h1>Form Ubah Data</h1>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?= $dataMhs["id"] ?>">
+            <input type="hidden" name="gambarLama" value="<?= $dataMhs["gambar"] ?>">
             <div class="form-group row">
                 <label for="nrp" class="col-sm-2 col-form-label">NRP :</label>
                 <div class="col-sm-10">
@@ -71,7 +72,8 @@ if (isset($_POST["submit"])) {
                 </div>
                 <label for="gambar" class="col-sm-2 col-form-label">Gambar :</label>
                 <div class="col-sm-10">
-                    <input type="text" name="gambar" class="form-control" id="gambar" placeholder="Masukkan Gambar" required value="<?= $dataMhs["gambar"]; ?>">
+                    <img src="img/<?= $dataMhs['gambar'] ?>" alt="" width="60">
+                    <input type="file" name="gambar" class="form-control" id="gambar" placeholder="Masukkan Gambar" required>
                 </div>
                 <button type="submit" class="btn btn-primary mx-auto mt-5" name="submit">Ubah</button>
             </div>

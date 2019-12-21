@@ -35,7 +35,6 @@ function tambah($data)
     return mysqli_affected_rows($conn);
 }
 
-
 function upload()
 {
     $namaFile = $_FILES['gambar']['name'];
@@ -50,7 +49,7 @@ function upload()
                 </script>";
         return false;
     }
-    //cek apakh yang di upload adalah gambar
+    //cek apakah yang di upload adalah gambar
     $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
     $ekstensiGambar = explode('.', $namaFile);
     $ekstensiGambar = strtolower(end($ekstensiGambar));
@@ -68,9 +67,14 @@ function upload()
         return false;
     }
     //lolos pengecekan, gambar siap diupload
-    move_uploaded_file($tmpName, 'img/' . $namaFile);
+    // generate nama gambar baru
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $ekstensiGambar;
 
-    return $namaFile;
+    move_uploaded_file($tmpName, 'img/' . $namaFileBaru);
+
+    return $namaFileBaru;
 }
 
 function hapus($id)
