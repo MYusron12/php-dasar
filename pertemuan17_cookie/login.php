@@ -74,7 +74,6 @@ if(isset($_POST["login"])){
 </head>
 
 <body>
-
   <body class="bg-gradient-primary">
     <div class="container">
       <!-- Outer Row -->
@@ -119,7 +118,7 @@ if(isset($_POST["login"])){
         </div>
       </div>
     </div>
-
+	</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.4.1.min.js"></script>
