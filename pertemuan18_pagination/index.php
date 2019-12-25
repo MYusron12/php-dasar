@@ -8,7 +8,7 @@ if(!isset($_SESSION["login"])){
 require 'functions.php';
 
   //pagination, konfigurasi
-  $jumlahDataPerHalaman = 4;
+  $jumlahDataPerHalaman = 3;
  $jumlahData = count(query("SELECT * FROM mahasiswa"));
  $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
  $halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
@@ -58,17 +58,20 @@ if (isset($_POST["cari"])) {
         </div>
     </nav>
     <!-- akhir navbar -->
+        <h1 class="text-center">Daftar Mahasiswa</h1>
 
     <!-- table bootstrap -->
     <div class="container">
-        <h1>Daftar Mahasiswa</h1>
         <a class="btn btn-primary" href="tambah.php" role="button">Tambah Data Mahasiswa</a>
         <form class="form-inline mt-1" action="" method="post">
             <input class="form-control mr-sm-2" type="text" placeholder="Cari Data ..." aria-label="Search" autofocus name="keyword" autocomplete="off">
             <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" name="cari">Cari</button>
-        </form>
-			<nav aria-label="Page navigation example">
+        </form>	
+		<nav aria-label="Page navigation example">
 			  <ul class="pagination justify-content-end">
+				<?php if( $halamanAktif > 1 ) : ?>
+				<li class="page-item"><a class="page-link" href="?halaman=<?= $halamanAktif - 1; ?>">&laquo;</a></li>
+				<?php endif; ?>
 		<?php for($i = 1; $i <= $jumlahHalaman; $i++) : ?>
 			<?php if($i == $halamanAktif ) : ?>
 				<li class="page-item"><a class="page-link" href="?halaman=<?= $i; ?>" style="font-weight: bold;"><?= $i; ?></a></li>
@@ -76,9 +79,12 @@ if (isset($_POST["cari"])) {
 				<li class="page-item"><a class="page-link" href="?halaman=<?= $i; ?>"><?= $i; ?></a></li>
 			<?php endif; ?>
 		<?php endfor; ?>
+				<?php if( $halamanAktif < $jumlahHalaman ) : ?>
+				<li class="page-item"><a class="page-link" href="?halaman=<?= $halamanAktif + 1; ?>">&raquo;</a></li>
+				<?php endif; ?>
 			  </ul>
-			</nav>	
-        <table class="table table-striped table-light">
+			</nav>
+        <table class="table table-striped table-light col-sm-12">
             <thead>
                 <tr>
                     <th scope="col">No .</th>
