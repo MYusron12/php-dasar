@@ -1,0 +1,10 @@
+4 jenis pengulanagn dalam php
+- for
+- while : selama kondisinya bernilai true, lakuakn yg ada didalamnya
+- do while
+- foreach
+
+3 bagian dalam pengulanagn
+- inisialisasi
+- kondisi terminasi
+- increment atau decrement
